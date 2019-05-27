@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#728a74">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/nuevo_pedido" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Puerto:"
+                android:textColor="@color/colorLabels"
+                android:textSize="19sp" />
+
+            <Spinner
+                android:id="@+id/opcion_puerto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Llegada:"
+                android:textColor="@color/colorLabels"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextAppearance.TextInputLayout.Blue">
+
+                    <EditText
+                        android:id="@+id/fecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Fecha (DD/MM/AA)"
+                        android:inputType="date"
+                        android:textColorHighlight="#DD000000"
+                        android:textColorHint="@color/colorLabels"
+                        android:textColorLink="#FB8C00" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextAppearance.TextInputLayout.Blue">
+
+                    <EditText
+                        android:id="@+id/hora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Hora (24 hrs)"
+                        android:inputType="time"
+                        android:textColorHighlight="#DD000000"
+                        android:textColorHint="@color/colorLabels"
+                        android:textColorLink="#FB8C00" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:weightSum="5">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="2"
+                app:hintTextAppearance="@style/TextAppearance.TextInputLayout.Blue">
+
+                <EditText
+                    android:id="@+id/input_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Producto"
+                    android:inputType="textCapWords"
+                    android:textColorHighlight="#DD000000"
+                    android:textColorHint="@android:color/black"
+                    android:textColorLink="#FB8C00" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="3"
+                app:hintTextAppearance="@style/TextAppearance.TextInputLayout.Blue">
+
+                <EditText
+                    android:id="@+id/input_cantidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cantidad"
+                    android:inputType="number"
+                    android:textColorHighlight="#DD000000"
+                    android:textColorHint="@color/colorLabels"
+                    android:textColorLink="#FB8C00" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/add_producto"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="2"
+                android:backgroundTint="#FB8C00"
+                android:src="@drawable/ic_add_black_24dp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lista_productos"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"></ListView>
+
+        <Button
+            android:id="@+id/enviar_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FB8C00"
+            android:text="Enviar Pedido" />
+
+        <TextView
+            android:id="@+id/msj_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* El costo por pedido es de $500.00 MXN\n * El costo de los productos puede variar"
+            android:textAlignment="center"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
